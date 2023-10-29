@@ -12,6 +12,6 @@ jobs:
     uses: ForgeForce/ActionsTest/.github/workflows/gradle_template.yml@main
     with:
       java: 17
-      gradle_tasks: "publish"
+      gradle_tasks: 'publish'
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
