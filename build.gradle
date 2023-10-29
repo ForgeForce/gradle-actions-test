@@ -1,0 +1,15 @@
+plugins {
+    id 'net.minecraftforge.gradleutils' version '[2.0.13,)'
+}
+
+changelog {
+    fromTag '1.0'
+}
+
+println("Version: ${version = gradleutils.tagOffsetVersion}")
+
+tasks.register('publish') {
+    doLast {
+        println 'HI!!!!!'
+    }
+}
