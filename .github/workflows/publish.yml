@@ -1,0 +1,19 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ForgeForce/ActionsTest/.github/workflows/gradle_template.yml@main
+    with:
+      java: 17
+      gradle_tasks: "publish"
+    secrets:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      MAVEN_USER: ''
+      MAVEN_PASSWORD: ''
