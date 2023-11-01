@@ -13,7 +13,7 @@ jobs:
     uses: ForgeForce/ActionsTest/.github/workflows/gradle_template.yml@main
     with:
       java: 17
-      gradle_tasks: 'publish'
+      gradle_tasks: "publish -Pabc=${{ secrets.DISCORD_WEBHOOK }}"
       # version_task: 'outputVersion'
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
