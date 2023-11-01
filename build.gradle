@@ -13,3 +13,9 @@ tasks.register('publish') {
         println 'HI!!!!!'
     }
 }
+
+tasks.register('outputVersion') {
+    doLast {
+        file(System.getenv('GITHUB_OUTPUT')) << 'version=1.0.4234'
+    }
+}
