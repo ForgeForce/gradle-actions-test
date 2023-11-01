@@ -14,6 +14,6 @@ jobs:
     with:
       java: 17
       gradle_tasks: 'publish'
-      version_task: 'outputVersion'
+      # version_task: 'outputVersion'
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
