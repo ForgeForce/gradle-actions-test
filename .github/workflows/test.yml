@@ -1,4 +1,4 @@
-name: Publish
+name: Test
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   statuses: write
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu
     steps:
       - uses: neoforged/action-tag-versioning@v1
