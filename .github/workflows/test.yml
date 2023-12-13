@@ -1,0 +1,17 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  build:
+    runs-on: ubuntu
+    steps:
+      - uses: neoforged/action-tag-versioning@v1
+        with:
+          labels: '-beta, -stable'
