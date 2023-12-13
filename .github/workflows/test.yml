@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - uses: neoforged/action-tag-versioning@v1
         with:
