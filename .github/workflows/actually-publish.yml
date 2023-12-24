@@ -1,0 +1,18 @@
+name: 'Actually publish PR'
+
+on:
+  workflow_run:
+    workflows: [Publish PRs]
+    types:
+      - completed
+
+permissions:
+  packages: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload
+        uses: ForgeForce/action-pr-publishing@main
