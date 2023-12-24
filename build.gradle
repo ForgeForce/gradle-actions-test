@@ -1,6 +1,10 @@
 plugins {
+    id 'java'
+    id 'maven-publish'
     id 'net.minecraftforge.gradleutils' version '[2.0.13,)'
 }
+
+group = 'com.example3'
 
 changelog {
     fromTag '1.0'
@@ -8,14 +12,26 @@ changelog {
 
 println("Version: ${version = gradleutils.tagOffsetVersion}")
 
-tasks.register('publish') {
-    doLast {
-        println 'HI!!!!!'
-    }
-}
-
 tasks.register('outputVersion') {
     doLast {
         file(System.getenv('GITHUB_OUTPUT')) << 'version=1.0.4234'
     }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+//    repositories {
+//        maven {
+//            name 'repo'
+//            url 'https://maven.pkg.github.com/ForgeForce/gradle-actions-test/subrepo'
+//            credentials {
+//                username 'Matyrobbrt'
+//                password project.gh_pat
+//            }
+//        }
+//    }
 }

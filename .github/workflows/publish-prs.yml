@@ -1,0 +1,31 @@
+name: Publish PRs
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1000
+          fetch-tags: true
+
+      - name: Make Gradle executable
+        # language=bash
+        run: chmod +x ./gradlew # Thanks Windows
+        if: inputs.version_task
+
+      - name: Setup Java 17
+        if: inputs.version_task
+        # https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md#java
+        # language=bash
+        run: export JAVA_HOME=$(echo $JAVA_HOME_17_X64)
+
+      - uses: ForgeForce/action-pr-publishing/upload@main
