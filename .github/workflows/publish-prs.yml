@@ -22,7 +22,6 @@ jobs:
         run: chmod +x ./gradlew # Thanks Windows
 
       - name: Setup Java 17
-        if: inputs.version_task
         # https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md#java
         # language=bash
         run: export JAVA_HOME=$(echo $JAVA_HOME_17_X64)
