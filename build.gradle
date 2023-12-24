@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'net.minecraftforge.gradleutils' version '[2.0.13,)'
+    id 'net.minecraftforge.gradleutils' version '[2.0.13,2.1)'
 }
 
 group = 'com.example3'
