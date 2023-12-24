@@ -16,3 +16,5 @@ jobs:
     steps:
       - name: Upload
         uses: ForgeForce/action-pr-publishing@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
