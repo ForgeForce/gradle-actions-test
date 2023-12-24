@@ -19,3 +19,5 @@ jobs:
         uses: ForgeForce/action-pr-publishing@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          artifacts_base_path: com/
