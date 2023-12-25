@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload
-        uses: ForgeForce/action-pr-publishing@main
+        uses: ForgeForce/action-pr-publishing@mainff
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         #with:
