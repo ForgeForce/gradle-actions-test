@@ -9,7 +9,7 @@ on:
 permissions:
   packages: write
   actions: read
-  contents: read
+  contents: write
   issues: write
   pull-requests: write
 
