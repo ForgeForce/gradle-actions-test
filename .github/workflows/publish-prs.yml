@@ -28,4 +28,4 @@ jobs:
         # language=bash
         run: export JAVA_HOME=$(echo $JAVA_HOME_17_X64)
 
-      - uses: ForgeForce/action-pr-publishing/upload@main
+      - uses: ForgeForce/action-pr-publishing/upload@mainff
