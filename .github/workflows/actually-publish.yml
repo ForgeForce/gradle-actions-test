@@ -24,10 +24,17 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate an Application repository access token
+        id: gen_repo_token
+        uses: kattecon/gh-app-access-token-gen@v1
+        with:
+          app_id: 750463
+          private_key: ${{ secrets.PR_PUBLISHING_APP_KEY }}
+          repository: forgeforce/gradle-actions-test
       - name: Upload
         uses: ForgeForce/action-pr-publishing@mainff
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.gen_repo_token.outputs.token }}
         with:
           uploader-workflow-name: 'Publish PRs'
-          #artifacts_base_path:
+          artifacts-base-path: ''
