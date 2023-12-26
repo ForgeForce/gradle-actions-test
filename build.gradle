@@ -23,6 +23,11 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
+        mj2(MavenPublication) {
+            from components.java
+            groupId = 'net.example'
+            artifactId = 'someartifact'
+        }
     }
 //    repositories {
 //        maven {
