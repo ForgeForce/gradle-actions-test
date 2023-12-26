@@ -38,3 +38,4 @@ jobs:
         with:
           uploader-workflow-name: 'Publish PRs'
           artifacts-base-path: ''
+          self-name: 'forgeforce-pr-publishing[bot]'
