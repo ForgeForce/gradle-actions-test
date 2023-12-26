@@ -38,4 +38,5 @@ jobs:
         with:
           uploader-workflow-name: 'Publish PRs'
           artifacts-base-path: ''
+          publishing-token: ${{ github.token }}
           self-name: 'forgeforce-pr-publishing[bot]'
