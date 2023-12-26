@@ -21,5 +21,6 @@ jobs:
         uses: ForgeForce/action-pr-publishing@mainff
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #with:
+        with:
+          uploader-workflow-name: 'Publish PRs'
           #artifacts_base_path:
