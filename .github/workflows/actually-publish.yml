@@ -5,6 +5,12 @@ on:
     workflows: [Publish PRs]
     types:
       - completed
+  issue_comment:
+    types:
+      - edited
+  pull_request_target:
+    types:
+      - opened
 
 permissions:
   packages: write
