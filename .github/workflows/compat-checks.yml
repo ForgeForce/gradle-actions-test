@@ -30,3 +30,5 @@ jobs:
         with:
           self-name: 'forgeforce-pr-publishing[bot]'
           beta-version-pattern: .+
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
