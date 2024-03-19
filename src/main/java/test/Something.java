@@ -14,4 +14,8 @@ public abstract class Something {
 
         }
     }
+
+    public boolean hmm() {
+        return false;
+    }
 }
