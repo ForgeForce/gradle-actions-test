@@ -5,7 +5,7 @@ public class Something {
         System.out.println("A");
     }
 
-    public String field1;
+    public final String field1 = "a";
 
     void hi() {
 
