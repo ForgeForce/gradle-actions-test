@@ -1,15 +1,18 @@
 package test;
 
-public abstract class Something {
+public class Something {
     public static void main(String[] args) {
         System.out.println("A");
     }
 
-    public final String field1 = "a";
+    public String field1;
 
-    abstract void hi();
+    public void hi() {
 
-    public static class C1 {
+    }
+
+    public static class C1 implements Runnable {
+        @Override
         public void run() {
 
         }
