@@ -1,0 +1,36 @@
+name: Publish
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1000
+          fetch-tags: true
+      - name: Make Gradlew executable
+          # language=bash
+        run: chmod +x ./gradlew # Thanks Windows
+
+      - name: Setup Java 17
+        # https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md#java
+        # language=bash
+        run: |
+          echo "JAVA_HOME=$(echo $JAVA_HOME_17_X64)" >> "$GITHUB_ENV"
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: publish
+        env:
+          MAVEN_USER: ${{ secrets.MAVEN_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
