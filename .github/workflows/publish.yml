@@ -12,6 +12,13 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: neoforged/action-tag-versioning@v1
+        name: Calculate version
+        id: version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          labels: -beta, -stable
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -34,3 +41,11 @@ jobs:
         env:
           MAVEN_USER: ${{ secrets.MAVEN_USER }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+      - uses: neoforged/action-github-status@v1
+        name: Set pending status
+        with:
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          context: 'Publishing'
+          state: 'success'
+          description: "Version: ${{ steps.version.outputs.version }}"
+          target_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

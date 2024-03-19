@@ -11,6 +11,11 @@ changelog {
     fromTag '1.0'
 }
 
+checkJarCompatibility {
+    mavens.add('https://maven.matyrobbrt.com/testing')
+    isBinary.set(true)
+}
+
 println("Version: ${version = gradleutils.tagOffsetVersion}")
 
 tasks.register('outputVersion') {
