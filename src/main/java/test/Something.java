@@ -16,4 +16,8 @@ public class Something {
 
         }
     }
+
+    public boolean hmm() {
+        return false;
+    }
 }

@@ -31,5 +31,6 @@ jobs:
         with:
           self-name: 'forgeforce-pr-publishing[bot]'
           beta-version-pattern: .+
+          beta-version-pattern: 30.+
         env:
           GITHUB_TOKEN: ${{ steps.gen_repo_token.outputs.token }}
