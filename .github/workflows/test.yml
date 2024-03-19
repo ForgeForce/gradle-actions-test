@@ -13,7 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: neoforged/action-tag-versioning@v1
-        with:
-          labels: -beta, -stable
         env:
           GITHUB_TOKEN: ${{ github.token }}
