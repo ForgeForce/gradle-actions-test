@@ -7,7 +7,7 @@ public class Something {
 
     public String field1;
 
-    public void hi() {
+    void hi() {
 
     }
 
