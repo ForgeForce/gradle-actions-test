@@ -11,8 +11,7 @@ public class Something {
 
     }
 
-    public static class C1 implements Runnable {
-        @Override
+    public static class C1 {
         public void run() {
 
         }
