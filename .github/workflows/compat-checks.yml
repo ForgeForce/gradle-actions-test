@@ -27,7 +27,7 @@ jobs:
           private_key: ${{ secrets.PR_PUBLISHING_APP_KEY }}
           repository: forgeforce/gradle-actions-test
       - name: Check PR compat
-        uses: ForgeForce/action-jar-compatibility@main
+        uses: neoforged/action-jar-compatibility@main
         with:
           self-name: 'forgeforce-pr-publishing[bot]'
           beta-version-pattern: .+
