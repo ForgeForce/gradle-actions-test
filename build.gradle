@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'net.minecraftforge.gradleutils' version '[2.0.13,2.1)'
-    id 'net.neoforged.jarcompatibilitychecker' version '0.1.0'
+    id 'net.neoforged.jarcompatibilitychecker' version '0.1.1'
 }
 
 group = 'com.example3'
