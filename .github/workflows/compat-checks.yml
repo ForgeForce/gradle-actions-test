@@ -30,6 +30,6 @@ jobs:
         uses: ForgeForce/action-jar-compatibility@main
         with:
           self-name: 'forgeforce-pr-publishing[bot]'
-          beta-version-pattern: 30.+
+          beta-version-pattern: .+
         env:
           GITHUB_TOKEN: ${{ steps.gen_repo_token.outputs.token }}
